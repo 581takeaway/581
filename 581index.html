@@ -6,7 +6,7 @@
     <title>Uber Eats 店家後台教學網站</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* 自定義滾動條樣式，讓深色模式更一致 */
+        /* 自定義滾動條樣式 */
         ::-webkit-scrollbar {
             width: 8px;
             height: 8px;
@@ -44,7 +44,7 @@
             MoreHorizontal, Filter, AlertCircle, TrendingDown, Eye, MousePointer2, ThumbsUp, 
             ThumbsDown, Camera, Zap, ShoppingBag, Menu, X, PieChart, MessageSquare, FilePlus, 
             MonitorPlay, Tag, Utensils, ShoppingCart, Gift, Percent, Timer, Info, Image as ImageIcon, 
-            Edit2, Download, Wallet, Smile, Check, FileCheck, Upload, CalendarDays, UserPlus, ArrowRight 
+            Edit2, Download, Wallet, Smile, Check, FileCheck, Upload, CalendarDays, UserPlus, ArrowRight, ExternalLink
         } from 'https://esm.sh/lucide-react@0.263.1';
 
         // --- Mock UI Components (Strict Uber Eats Theme) ---
@@ -994,7 +994,16 @@
 
                         /* Sidebar Header */
                         React.createElement("div", { className: "p-6 border-b border-[#333] flex flex-col gap-4" },
-                          React.createElement("h1", { className: "font-bold text-white text-lg" }, "Uber Eats 店家後台教學網站")
+                          React.createElement("h1", { className: "font-bold text-white text-lg" }, "Uber Eats 店家後台教學網站"),
+                          React.createElement("a", { 
+                              href: "https://www.start-up.com.tw/",
+                              target: "_blank",
+                              rel: "noreferrer",
+                              className: "bg-[#1E1E1E] border border-[#333] text-white text-sm font-bold px-4 py-2 rounded-lg hover:bg-[#333] transition-colors text-center flex items-center justify-center gap-2"
+                          }, 
+                            "餐飲創業家",
+                            React.createElement(ExternalLink, { size: 14, className: "text-[#AFAFAF]" })
+                          )
                         ),
                         
                         React.createElement("div", { className: "flex-1 overflow-y-auto py-6 space-y-1 px-3 scrollbar-thin scrollbar-thumb-[#333] scrollbar-track-transparent" },
