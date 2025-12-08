@@ -47,26 +47,26 @@
             Edit2, Download, Wallet, Smile, Check, FileCheck, Upload, CalendarDays, UserPlus, ArrowRight, ExternalLink
         } from 'https://esm.sh/lucide-react@0.263.1';
 
-        // --- Mock UI Components (Strict Uber Eats Theme) ---
+        // --- Mock UI Components (Strict Uber Eats Theme with Responsive Fonts) ---
 
         // 1. 首頁 (Home)
         const MockHomeDashboard = () => (
-            React.createElement("div", { className: "bg-[#F6F6F6] min-h-full p-6 font-sans text-black" },
+            React.createElement("div", { className: "bg-[#F6F6F6] min-h-full p-4 sm:p-6 font-sans text-black" },
                 React.createElement("div", { className: "max-w-7xl mx-auto space-y-6" },
                     // Alert
-                    React.createElement("div", { className: "bg-[#FFF5F5] border-l-4 border-[#E11900] p-4 flex justify-between items-center shadow-sm rounded-r-md" },
+                    React.createElement("div", { className: "bg-[#FFF5F5] border-l-4 border-[#E11900] p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center shadow-sm rounded-r-md gap-4" },
                         React.createElement("div", { className: "flex items-center gap-3" },
-                            React.createElement(AlertCircle, { className: "text-[#E11900]", size: 24 }),
+                            React.createElement(AlertCircle, { className: "text-[#E11900] flex-shrink-0", size: 24 }),
                             React.createElement("div", null,
                                 React.createElement("h3", { className: "font-bold text-[#E11900] text-base" }, "商店無法接單"),
                                 React.createElement("p", { className: "text-[#E11900] text-sm" }, "檢查您的營業時間設定。")
                             )
                         ),
-                        React.createElement("button", { className: "bg-white border border-[#E2E2E2] text-[#E11900] text-sm font-bold px-4 py-2 rounded-full hover:bg-[#FFF0F0] transition-colors" }, "查看詳情")
+                        React.createElement("button", { className: "bg-white border border-[#E2E2E2] text-[#E11900] text-sm font-bold px-4 py-2 rounded-full hover:bg-[#FFF0F0] transition-colors w-full sm:w-auto" }, "查看詳情")
                     ),
                     // Task Cards
                     React.createElement("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" },
-                        React.createElement("div", { className: "bg-white p-6 rounded-xl border border-[#E2E2E2] shadow-sm hover:shadow-md transition-all cursor-pointer h-36 flex flex-col justify-between group" },
+                        React.createElement("div", { className: "bg-white p-6 rounded-xl border border-[#E2E2E2] shadow-sm hover:shadow-md transition-all cursor-pointer h-auto sm:h-36 flex flex-col justify-between group gap-4 sm:gap-0" },
                             React.createElement("div", { className: "flex justify-between items-start" },
                                 React.createElement("div", { className: "bg-[#E8F8F0] p-2 rounded-full text-[#06C167] group-hover:scale-105 transition-transform" }, React.createElement(Clock, { size: 24 })),
                                 React.createElement(ChevronRight, { size: 20, className: "text-[#AFAFAF] group-hover:text-black transition-colors" })
@@ -76,7 +76,7 @@
                                 React.createElement("div", { className: "text-sm text-[#545454] mt-1" }, "確保顧客知道何時可點餐")
                             )
                         ),
-                        React.createElement("div", { className: "bg-white p-6 rounded-xl border border-[#E2E2E2] shadow-sm hover:shadow-md transition-all cursor-pointer h-36 flex flex-col justify-between group" },
+                        React.createElement("div", { className: "bg-white p-6 rounded-xl border border-[#E2E2E2] shadow-sm hover:shadow-md transition-all cursor-pointer h-auto sm:h-36 flex flex-col justify-between group gap-4 sm:gap-0" },
                             React.createElement("div", { className: "flex justify-between items-start" },
                                 React.createElement("div", { className: "bg-[#EBF5FF] p-2 rounded-full text-[#276EF1] group-hover:scale-105 transition-transform" }, React.createElement(FileText, { size: 24 })),
                                 React.createElement(ChevronRight, { size: 20, className: "text-[#AFAFAF] group-hover:text-black transition-colors" })
@@ -88,30 +88,31 @@
                         )
                     ),
                     // Stats
-                    React.createElement("div", { className: "flex justify-between items-end pt-2" },
+                    React.createElement("div", { className: "flex flex-col sm:flex-row justify-between items-start sm:items-end pt-2 gap-4" },
                         React.createElement("div", null,
                             React.createElement("div", { className: "text-sm text-[#545454] font-bold mb-1" }, "9月12日"),
-                            React.createElement("h2", { className: "text-3xl font-bold text-black" }, "今天業績")
+                            React.createElement("h2", { className: "text-2xl sm:text-3xl font-bold text-black" }, "今天業績")
                         ),
-                        React.createElement("button", { className: "bg-white border border-[#E2E2E2] px-4 py-2 rounded-full text-sm font-bold shadow-sm flex items-center gap-2 hover:bg-[#FAFAFA] transition-colors text-black" },
+                        React.createElement("button", { className: "bg-white border border-[#E2E2E2] px-4 py-2 rounded-full text-sm font-bold shadow-sm flex items-center gap-2 hover:bg-[#FAFAFA] transition-colors text-black w-full sm:w-auto justify-center" },
                             "所有商店 (1)", React.createElement(ChevronDown, { size: 16 })
                         )
                     ),
+                    // Stats Board - Responsive Grid
                     React.createElement("div", { className: "bg-white rounded-xl shadow-sm border border-[#E2E2E2] p-6" },
-                        React.createElement("div", { className: "grid grid-cols-3 gap-6 divide-x divide-[#E2E2E2]" },
-                            React.createElement("div", { className: "px-4" },
+                        React.createElement("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-6 divide-y sm:divide-y-0 sm:divide-x divide-[#E2E2E2]" },
+                            React.createElement("div", { className: "px-0 sm:px-4 pt-4 sm:pt-0" },
                                 React.createElement("div", { className: "text-sm text-[#545454] mb-2 font-medium" }, "銷售額"),
-                                React.createElement("div", { className: "text-4xl font-bold text-black tracking-tight" }, "$10,653"),
+                                React.createElement("div", { className: "text-2xl sm:text-4xl font-bold text-black tracking-tight" }, "$10,653"),
                                 React.createElement("div", { className: "text-xs text-[#AFAFAF] mt-2 font-medium" }, "總銷售金額")
                             ),
-                            React.createElement("div", { className: "px-4" },
+                            React.createElement("div", { className: "px-0 sm:px-4 pt-4 sm:pt-0" },
                                 React.createElement("div", { className: "text-sm text-[#545454] mb-2 font-medium" }, "訂單"),
-                                React.createElement("div", { className: "text-4xl font-bold text-black tracking-tight" }, "79"),
+                                React.createElement("div", { className: "text-2xl sm:text-4xl font-bold text-black tracking-tight" }, "79"),
                                 React.createElement("div", { className: "text-xs text-[#AFAFAF] mt-2 font-medium" }, "完成訂單數")
                             ),
-                            React.createElement("div", { className: "px-4" },
+                            React.createElement("div", { className: "px-0 sm:px-4 pt-4 sm:pt-0" },
                                 React.createElement("div", { className: "text-sm text-[#545454] mb-2 font-medium" }, "平均訂單金額"),
-                                React.createElement("div", { className: "text-4xl font-bold text-black tracking-tight" }, "$358"),
+                                React.createElement("div", { className: "text-2xl sm:text-4xl font-bold text-black tracking-tight" }, "$358"),
                                 React.createElement("div", { className: "text-xs text-[#AFAFAF] mt-2 font-medium" }, "每單平均")
                             )
                         )
@@ -122,22 +123,23 @@
 
         // 2. 餐廳門市 (Stores)
         const MockStoresPage = () => (
-            React.createElement("div", { className: "bg-[#F6F6F6] min-h-full p-6 font-sans text-black" },
+            React.createElement("div", { className: "bg-[#F6F6F6] min-h-full p-4 sm:p-6 font-sans text-black" },
                 React.createElement("div", { className: "max-w-7xl mx-auto space-y-6" },
                     React.createElement("div", { className: "flex justify-between items-center" },
-                        React.createElement("h2", { className: "text-3xl font-bold text-black" }, "餐廳"),
+                        React.createElement("h2", { className: "text-2xl sm:text-3xl font-bold text-black" }, "餐廳"),
                         React.createElement("div", { className: "flex gap-3" },
-                            React.createElement("button", { className: "bg-white border border-[#E2E2E2] px-4 py-2 rounded-full text-sm font-bold shadow-sm hover:bg-[#FAFAFA] transition-colors text-black" }, "篩選"),
-                            React.createElement("button", { className: "bg-white border border-[#E2E2E2] px-4 py-2 rounded-full text-sm font-bold shadow-sm hover:bg-[#FAFAFA] transition-colors text-black" }, "排序依據")
+                            React.createElement("button", { className: "bg-white border border-[#E2E2E2] px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-bold shadow-sm hover:bg-[#FAFAFA] transition-colors text-black" }, "篩選"),
+                            React.createElement("button", { className: "bg-white border border-[#E2E2E2] px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-bold shadow-sm hover:bg-[#FAFAFA] transition-colors text-black" }, "排序依據")
                         )
                     ),
-                    React.createElement("div", null,
+                    // ... content omitted for brevity (similar pattern)
+                     React.createElement("div", null,
                         React.createElement("h3", { className: "text-lg font-bold text-black mb-4" }, "離線商店"),
                         React.createElement("div", { className: "space-y-4" },
                             React.createElement("div", { className: "bg-white p-6 rounded-xl border border-[#E2E2E2] shadow-sm flex flex-col gap-4" },
                                 React.createElement("div", { className: "flex justify-between items-start" },
                                     React.createElement("div", null,
-                                        React.createElement("h4", { className: "font-bold text-xl text-black" }, "美味餐廳 - 台北松山店"),
+                                        React.createElement("h4", { className: "font-bold text-lg sm:text-xl text-black" }, "美味餐廳 - 台北松山店"),
                                         React.createElement("p", { className: "text-sm text-[#545454] mt-1" }, "台北市松山區民生東路...")
                                     ),
                                     React.createElement("div", { className: "flex items-center gap-2" },
@@ -166,7 +168,7 @@
                             React.createElement("div", { className: "bg-white p-6 rounded-xl border border-[#E2E2E2] shadow-sm flex flex-col gap-4 border-l-4 border-l-[#06C167]" },
                                 React.createElement("div", { className: "flex justify-between items-start" },
                                     React.createElement("div", null,
-                                        React.createElement("h4", { className: "font-bold text-xl text-black" }, "美味餐廳 - 旗艦店"),
+                                        React.createElement("h4", { className: "font-bold text-lg sm:text-xl text-black" }, "美味餐廳 - 旗艦店"),
                                         React.createElement("p", { className: "text-sm text-[#545454] mt-1" }, "台北市大安區忠孝東路...")
                                     ),
                                     React.createElement("div", { className: "w-3 h-3 rounded-full bg-[#06C167] shadow-[0_0_0_4px_rgba(6,193,103,0.2)]" })
@@ -190,26 +192,26 @@
         const MockOrderPage = () => (
             React.createElement("div", { className: "bg-white min-h-full font-sans text-black" },
                 React.createElement("div", { className: "p-6 border-b border-[#E2E2E2]" },
-                    React.createElement("h2", { className: "text-3xl font-bold text-black mb-2" }, "訂單數量"),
+                    React.createElement("h2", { className: "text-2xl sm:text-3xl font-bold text-black mb-2" }, "訂單數量"),
                     React.createElement("p", { className: "text-sm text-[#545454]" },
                         "即時查看您的訂單。如需詳細瞭解您的費用，請前往 ", React.createElement("span", { className: "text-[#276EF1] underline cursor-pointer font-medium" }, "按訂單付款"), "。"
                     )
                 ),
-                React.createElement("div", { className: "flex border-b border-[#E2E2E2] px-6 bg-[#FAFAFA]" },
-                    React.createElement("button", { className: "px-6 py-4 text-sm font-bold text-[#545454] hover:bg-[#EEEEEE] transition-colors border-b-4 border-transparent" }, "處理中"),
-                    React.createElement("button", { className: "px-6 py-4 text-sm font-bold text-[#545454] hover:bg-[#EEEEEE] transition-colors border-b-4 border-transparent" }, "已安排"),
-                    React.createElement("button", { className: "px-6 py-4 text-sm font-bold text-black border-b-4 border-black bg-white" }, "歷史記錄")
+                React.createElement("div", { className: "flex border-b border-[#E2E2E2] px-6 bg-[#FAFAFA] overflow-x-auto" },
+                    React.createElement("button", { className: "px-6 py-4 text-sm font-bold text-[#545454] hover:bg-[#EEEEEE] transition-colors border-b-4 border-transparent whitespace-nowrap" }, "處理中"),
+                    React.createElement("button", { className: "px-6 py-4 text-sm font-bold text-[#545454] hover:bg-[#EEEEEE] transition-colors border-b-4 border-transparent whitespace-nowrap" }, "已安排"),
+                    React.createElement("button", { className: "px-6 py-4 text-sm font-bold text-black border-b-4 border-black bg-white whitespace-nowrap" }, "歷史記錄")
                 ),
                 React.createElement("div", { className: "p-6" },
-                    React.createElement("div", { className: "bg-[#FFF5EB] border border-[#FFC043] rounded-lg p-4 mb-8 flex items-center justify-between shadow-sm" },
+                    React.createElement("div", { className: "bg-[#FFF5EB] border border-[#FFC043] rounded-lg p-4 mb-8 flex flex-col sm:flex-row items-start sm:items-center justify-between shadow-sm gap-4" },
                         React.createElement("div", { className: "flex items-center gap-4" },
-                            React.createElement(AlertTriangle, { className: "text-[#FFC043] fill-[#FFF5EB]", size: 24 }),
+                            React.createElement(AlertTriangle, { className: "text-[#FFC043] fill-[#FFF5EB] flex-shrink-0", size: 24 }),
                             React.createElement("div", null,
                                 React.createElement("div", { className: "font-bold text-black text-base" }, "已回報 4 個訂單問題"),
                                 React.createElement("div", { className: "text-sm text-[#545454]" }, "您的顧客已提交訂單相關問題。")
                             )
                         ),
-                        React.createElement("button", { className: "bg-white border border-[#E2E2E2] text-black text-sm font-bold px-4 py-2 rounded-full hover:bg-[#F6F6F6] shadow-sm transition-colors" }, "檢視訂單")
+                        React.createElement("button", { className: "bg-white border border-[#E2E2E2] text-black text-sm font-bold px-4 py-2 rounded-full hover:bg-[#F6F6F6] shadow-sm transition-colors w-full sm:w-auto" }, "檢視訂單")
                     ),
                     React.createElement("div", { className: "flex flex-wrap gap-3 mb-6" },
                         React.createElement("div", { className: "relative flex-1 min-w-[240px]" },
@@ -257,8 +259,8 @@
         const MockSalesDashboard = () => (
           React.createElement("div", { className: "bg-[#F6F6F6] min-h-full p-6 font-sans text-black" },
             React.createElement("div", { className: "max-w-7xl mx-auto space-y-8" },
-              React.createElement("div", { className: "flex justify-between items-center" },
-                React.createElement("h2", { className: "text-3xl font-bold text-black" }, "銷售額"),
+              React.createElement("div", { className: "flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4" },
+                React.createElement("h2", { className: "text-2xl sm:text-3xl font-bold text-black" }, "銷售額"),
                 React.createElement("div", { className: "flex gap-3" },
                   React.createElement("button", { className: "bg-white border border-[#E2E2E2] px-4 py-2 rounded-full text-sm font-bold shadow-sm hover:bg-[#F6F6F6] text-black transition-colors" }, "所有餐廳門市 (34)"),
                   React.createElement("button", { className: "bg-white border border-[#E2E2E2] px-4 py-2 rounded-full text-sm font-bold shadow-sm hover:bg-[#F6F6F6] text-black transition-colors" }, "上週")
@@ -272,7 +274,7 @@
                 ].map((item, i) => (
                   React.createElement("div", { key: i, className: `bg-white p-6 rounded-xl border border-[#E2E2E2] shadow-sm relative overflow-hidden ${i===0 ? 'border-l-4 border-l-black' : ''}` },
                      React.createElement("div", { className: "text-xs font-bold text-[#545454] uppercase mb-2 tracking-wider" }, item.title),
-                     React.createElement("div", { className: "text-4xl font-bold text-black mb-3" }, item.val),
+                     React.createElement("div", { className: "text-2xl sm:text-4xl font-bold text-black mb-3" }, item.val),
                      React.createElement("div", { className: `flex items-center text-xs font-bold w-fit px-2 py-1 rounded ${item.positive ? 'bg-[#E6F7ED] text-[#06C167]' : 'bg-[#FFF0F0] text-[#E11900]'}` },
                        item.positive ? React.createElement(TrendingUp, { size: 14, className: "mr-1" }) : React.createElement(TrendingDown, { size: 14, className: "mr-1" }),
                        item.change
@@ -294,14 +296,14 @@
               ),
                React.createElement("div", { className: "bg-white p-6 rounded-xl border border-[#E2E2E2] shadow-sm" },
                  React.createElement("h3", { className: "text-lg font-bold mb-8 text-black flex items-center gap-2" }, "使用者轉換漏斗圖 ", React.createElement(Info, { size: 16, className: "text-[#AFAFAF]" })),
-                 React.createElement("div", { className: "flex items-end justify-around h-48 px-8 border-b border-[#F6F6F6]" },
+                 React.createElement("div", { className: "flex items-end justify-around h-48 px-2 sm:px-8 border-b border-[#F6F6F6]" },
                     [
                       { label: '曝光次數', val: '22K', h: '100%', color: 'bg-[#276EF1]' },
                       { label: '點擊次數', val: '2.1K', h: '40%', color: 'bg-[#6CA0FC]' },
                       { label: '訂單', val: '339', h: '15%', color: 'bg-[#A8C7FA]' }
                     ].map((step, i) => (
                       React.createElement("div", { key: i, className: "flex flex-col items-center gap-3 w-full" },
-                         React.createElement("div", { className: `w-1/2 ${step.color} rounded-t-sm shadow-lg`, style: { height: step.h } }),
+                         React.createElement("div", { className: `w-2/3 ${step.color} rounded-t-sm shadow-lg`, style: { height: step.h } }),
                          React.createElement("div", { className: "text-center pb-4" },
                             React.createElement("div", { className: "font-bold text-black text-lg" }, step.val),
                             React.createElement("div", { className: "text-xs text-[#545454] font-medium mt-1" }, step.label)
@@ -316,18 +318,18 @@
 
         // 4.1 Operations
         const MockOperationsDashboard = () => (
-          React.createElement("div", { className: "bg-[#F6F6F6] min-h-full p-8 font-sans text-black" },
+          React.createElement("div", { className: "bg-[#F6F6F6] min-h-full p-6 font-sans text-black" },
             React.createElement("div", { className: "max-w-7xl mx-auto space-y-8" },
               React.createElement("div", { className: "bg-white p-8 rounded-xl border border-[#E2E2E2] shadow-sm" },
                 React.createElement("h3", { className: "text-xl font-bold text-black mb-8 flex items-center gap-2" }, "有問題的訂單 ", React.createElement(AlertCircle, { size: 20, className: "text-[#AFAFAF]" })),
-                React.createElement("div", { className: "flex gap-16 mb-8" },
+                React.createElement("div", { className: "flex flex-col sm:flex-row gap-8 sm:gap-16 mb-8" },
                   React.createElement("div", null,
                     React.createElement("div", { className: "text-sm text-[#545454] mb-2 font-medium" }, "錯誤訂單率"),
-                    React.createElement("div", { className: "text-5xl font-extrabold text-black" }, "0% ", React.createElement("span", { className: "text-[#06C167] text-sm font-bold ml-2 bg-[#E6F7ED] px-2 py-1 rounded" }, "↓ 100%"))
+                    React.createElement("div", { className: "text-3xl sm:text-5xl font-extrabold text-black" }, "0% ", React.createElement("span", { className: "text-[#06C167] text-sm font-bold ml-2 bg-[#E6F7ED] px-2 py-1 rounded" }, "↓ 100%"))
                   ),
                   React.createElement("div", null,
                     React.createElement("div", { className: "text-sm text-[#545454] mb-2 font-medium" }, "遺失費用"),
-                    React.createElement("div", { className: "text-5xl font-extrabold text-black" }, "-- ", React.createElement("span", { className: "text-[#06C167] text-sm font-bold ml-2" }, "↓ 100%"))
+                    React.createElement("div", { className: "text-3xl sm:text-5xl font-extrabold text-black" }, "-- ", React.createElement("span", { className: "text-[#06C167] text-sm font-bold ml-2" }, "↓ 100%"))
                   )
                 ),
                 React.createElement("div", { className: "h-48 w-full bg-[#FAFAFA] rounded-lg border border-dashed border-[#E2E2E2] flex items-center justify-center text-[#AFAFAF]" },
@@ -356,19 +358,19 @@
 
         // 4.2 Customer Insights
         const MockCustomerInsights = () => (
-          React.createElement("div", { className: "bg-[#F6F6F6] min-h-full p-8 font-sans text-black" },
+          React.createElement("div", { className: "bg-[#F6F6F6] min-h-full p-6 font-sans text-black" },
             React.createElement("div", { className: "max-w-7xl mx-auto space-y-8" },
-               React.createElement("div", { className: "flex justify-between items-center" },
-                 React.createElement("h2", { className: "text-3xl font-bold text-black" }, "顧客深入分析"),
+               React.createElement("div", { className: "flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4" },
+                 React.createElement("h2", { className: "text-2xl sm:text-3xl font-bold text-black" }, "顧客深入分析"),
                  React.createElement("div", { className: "flex gap-3" },
                    React.createElement("button", { className: "bg-white border border-[#E2E2E2] px-4 py-2 rounded-full text-sm font-bold shadow-sm hover:bg-[#F6F6F6] text-black transition-colors" }, "所有餐廳門市"),
                    React.createElement("button", { className: "bg-white border border-[#E2E2E2] px-4 py-2 rounded-full text-sm font-bold shadow-sm hover:bg-[#F6F6F6] text-black transition-colors" }, "過去 7 天")
                  )
                ),
-               React.createElement("div", { className: "bg-white p-8 rounded-xl border border-[#E2E2E2] shadow-sm flex flex-col md:flex-row gap-16 items-center" },
-                  React.createElement("div", { className: "w-56 h-56 rounded-full border-[20px] border-[#276EF1] flex items-center justify-center relative flex-shrink-0 shadow-inner" },
+               React.createElement("div", { className: "bg-white p-8 rounded-xl border border-[#E2E2E2] shadow-sm flex flex-col md:flex-row gap-8 md:gap-16 items-center" },
+                  React.createElement("div", { className: "w-48 h-48 sm:w-56 sm:h-56 rounded-full border-[20px] border-[#276EF1] flex items-center justify-center relative flex-shrink-0 shadow-inner" },
                      React.createElement("div", { className: "text-center" },
-                        React.createElement("div", { className: "text-4xl font-extrabold text-black" }, "376"),
+                        React.createElement("div", { className: "text-2xl sm:text-4xl font-extrabold text-black" }, "376"),
                         React.createElement("div", { className: "text-sm text-[#545454] font-bold uppercase tracking-widest" }, "總計")
                      ),
                      React.createElement("div", { className: "absolute inset-0 rounded-full border-[20px] border-[#06C167] border-l-transparent border-b-transparent transform rotate-45 opacity-80" })
@@ -376,15 +378,15 @@
                   React.createElement("div", { className: "flex-1 w-full space-y-4" },
                      React.createElement("div", { className: "flex justify-between items-center p-5 bg-[#F8FAFF] rounded-lg border-l-4 border-l-[#276EF1] hover:shadow-md transition-shadow" },
                         React.createElement("span", { className: "font-bold text-lg text-[#276EF1]" }, "新顧客"),
-                        React.createElement("span", { className: "font-extrabold text-xl text-black" }, "204 ", React.createElement("span", { className: "text-[#06C167] text-sm ml-2" }, "↑ 5%"))
+                        React.createElement("span", { className: "font-extrabold text-lg sm:text-xl text-black" }, "204 ", React.createElement("span", { className: "text-[#06C167] text-sm ml-2" }, "↑ 5%"))
                      ),
                      React.createElement("div", { className: "flex justify-between items-center p-5 bg-[#F0FDF4] rounded-lg border-l-4 border-l-[#06C167] hover:shadow-md transition-shadow" },
                         React.createElement("span", { className: "font-bold text-lg text-[#06C167]" }, "常客"),
-                        React.createElement("span", { className: "font-extrabold text-xl text-black" }, "66")
+                        React.createElement("span", { className: "font-extrabold text-lg sm:text-xl text-black" }, "66")
                      ),
                      React.createElement("div", { className: "flex justify-between items-center p-5 bg-[#FFF5EB] rounded-lg border-l-4 border-l-[#FFC043] hover:shadow-md transition-shadow" },
                         React.createElement("span", { className: "font-bold text-lg text-[#E11900]" }, "流失"),
-                        React.createElement("span", { className: "font-extrabold text-xl text-black" }, "102 ", React.createElement("span", { className: "text-[#E11900] text-sm ml-2" }, "↓ 2.5%"))
+                        React.createElement("span", { className: "font-extrabold text-lg sm:text-xl text-black" }, "102 ", React.createElement("span", { className: "text-[#E11900] text-sm ml-2" }, "↓ 2.5%"))
                      )
                   )
                )
@@ -394,11 +396,11 @@
 
         // 4.3 Reviews
         const MockReviews = () => (
-          React.createElement("div", { className: "bg-[#F6F6F6] min-h-full p-8 font-sans text-black" },
+          React.createElement("div", { className: "bg-[#F6F6F6] min-h-full p-6 font-sans text-black" },
             React.createElement("div", { className: "max-w-7xl mx-auto space-y-6" },
                React.createElement("div", { className: "bg-white p-10 rounded-xl border border-[#E2E2E2] shadow-sm text-center" },
                   React.createElement("h3", { className: "text-xl font-bold mb-4 text-[#545454]" }, "商店總評分"),
-                  React.createElement("div", { className: "text-7xl font-extrabold mb-4 text-black" }, "4.8"),
+                  React.createElement("div", { className: "text-4xl sm:text-7xl font-extrabold mb-4 text-black" }, "4.8"),
                   React.createElement("div", { className: "flex justify-center gap-2 text-[#FFC043] mb-8" },
                      [1,2,3,4,5].map(i => React.createElement(Star, { key: i, size: 40, fill: "currentColor" }))
                   ),
@@ -408,7 +410,7 @@
                   React.createElement("h3", { className: "text-xl font-bold mb-6 text-black" }, "菜單餐點滿意度"),
                   React.createElement("div", { className: "flex flex-col items-center justify-center py-8" },
                      React.createElement("div", { className: "text-center relative mb-6" },
-                        React.createElement("div", { className: "text-6xl font-extrabold text-[#06C167] mb-2" }, "92%"),
+                        React.createElement("div", { className: "text-3xl sm:text-6xl font-extrabold text-[#06C167] mb-2" }, "92%"),
                         React.createElement("div", { className: "text-sm text-[#545454] font-bold" }, "平均好評率")
                      )
                   ),
@@ -472,7 +474,7 @@
                    ),
                    React.createElement("div", { className: "pt-4" },
                       React.createElement("h3", { className: "font-bold text-xl mb-6 text-black" }, "預估成效"),
-                      React.createElement("div", { className: "grid grid-cols-3 gap-6" },
+                      React.createElement("div", { className: "grid grid-cols-1 sm:grid-cols-3 gap-6" },
                          React.createElement("div", { className: "p-5 bg-[#F6F6F6] rounded-xl border border-[#E2E2E2]" },
                             React.createElement("div", { className: "text-sm text-[#545454] mb-2 font-medium" }, "預估銷售額"),
                             React.createElement("div", { className: "text-2xl font-bold text-[#06C167]" }, "$122,863")
@@ -483,7 +485,7 @@
                          ),
                          React.createElement("div", { className: "p-5 bg-[#F6F6F6] rounded-xl border border-[#E2E2E2]" },
                             React.createElement("div", { className: "text-sm text-[#545454] mb-2 font-medium" }, "費用上限"),
-                            React.createElement("div", { className: "text-2xl font-bold text-black" }, "$14,910")
+                            React.createElement("div", { className: "text-lg sm:text-2xl font-bold text-black" }, "$14,910")
                          )
                       )
                    )
@@ -492,7 +494,7 @@
           )
         );
 
-        // 9. Offers
+        // 9. 優惠 (Offers)
         const MockOffers = () => (
           React.createElement("div", { className: "bg-[#F6F6F6] min-h-full font-sans text-black p-8" },
             React.createElement("div", { className: "max-w-4xl mx-auto space-y-8" },
@@ -524,7 +526,7 @@
           )
         );
 
-        // 10. Marketing Hub
+        // 10. 行銷總覽 (Marketing Hub)
         const MockMarketingHub = () => (
           React.createElement("div", { className: "bg-white w-full min-h-full font-sans pb-10 text-black" },
             React.createElement("div", { className: "p-8" },
@@ -966,7 +968,7 @@
                         ),
                         React.createElement("span", { className: "font-bold text-lg text-white" }, "Uber Eats 店家後台教學網站"),
                         React.createElement("div", { className: "w-auto" },
-                           /* Mobile Join Button - Text Version */
+                           /* Mobile Join Button - Text Version (UPDATED) */
                             React.createElement("a", { 
                                href: "https://lin.ee/U0aUaIG", 
                                target: "_blank", 
@@ -1057,8 +1059,9 @@
                           ))
                         ),
                         
-                        /* Sidebar Footer */
+                        /* Sidebar Footer (Updated) */
                         React.createElement("div", { className: "p-6 border-t border-[#333] flex flex-col gap-3 text-sm font-bold bg-[#121212]" },
+                           /* Removed previous "Quick Join" button */
                            React.createElement("a", { href: "https://lin.ee/U0aUaIG", target: "_blank", rel: "noreferrer", className: "flex items-center gap-3 p-3 rounded-lg hover:bg-[#1E1E1E] transition-colors group text-[#AFAFAF] hover:text-[#06C167]" },
                              React.createElement("div", { className: "bg-[#1E1E1E] p-2 rounded-full text-[#06C167] group-hover:bg-[#06C167] group-hover:text-black transition-colors" }, React.createElement(UserPlus, { size: 18 })),
                              "快速加入 Uber Eats"
